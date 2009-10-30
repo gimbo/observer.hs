@@ -1,5 +1,12 @@
-SOURCES		:=	$(shell find Control -name "*.hs")
-HASKELLS	:=	$(shell find . -name "*.hs")
+PACKAGE		:=	observer
+SRCDIR		:=	Control
+
+## Everything from here on should be generic across projects.
+
+SOURCES		:=	$(shell find $(SRCDIR) -name "*.hs" -or -name "*.lhs")
+HADDOCK		:=	dist/doc/html/$(PACKAGE)/index.html
+
+all:			clean configure build haddock sdist
 
 clean:
 			@runghc Setup clean && \
@@ -8,41 +15,48 @@ clean:
 			  find . -name '*.o' -exec rm -vf {} ';' && \
 			  rm -vf graphmod*
 
+## For some reason I have trained myself to type "make nuke".
 nuke:			clean
 
-lint:
-			hlint $(HASKELLS)
+## Configuration.
 
-configure:
+dist/setup-config:	$(PACKAGE).cabal
 			runghc Setup configure
 
-build:
+configure:		$(SOURCES) dist/setup-config
+
+## Binaries.
+
+dist/build:		$(SOURCES) dist/setup-config
 			runghc Setup build
 
-haddock:
+build:			dist/build
+
+## Documentation.
+
+$(HADDOCK):		$(SOURCES) dist/setup-config
 			runghc Setup haddock --hyperlink-source
 
-view:
-			open dist/doc/html/fsmActions/index.html
+haddock:		$(HADDOCK)
 
-sdist:
+view:			$(HADDOCK)
+			open $(HADDOCK)
+
+## Package.
+
+sdist:			dist/setup-config
 			runghc Setup sdist
 
-.PHONY: testsuite/Main
-testsuite/Main:
-			ghc -O2 -Wall -itestsuite --make testsuite/Main
+## Hlint, woo.
 
-test:			testsuite/Main
-			./testsuite/Main
+lint:
+			hlint $(SOURCES)
 
-testslow:
-			sh testsuite/runtests.sh
-
-all:			test clean configure build haddock sdist
-
-# Plotting module dependencies
+## Plot module dependencies.
 
 graphmod:
 			@graphmod -q --no-cluster $(SOURCES) > graphmod.dot && \
 			  dot -T pdf -o graphmod.pdf graphmod.dot && \
 			  open graphmod.pdf
+
+.PHONY: all clean nuke configure build haddock view sdist lint graphmod
