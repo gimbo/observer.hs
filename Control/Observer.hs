@@ -41,7 +41,7 @@ notifyObservers subject =
 changeValue :: Subject sub val => sub -> (val -> val) -> IO ()
 changeValue subject f =
    do a <- getValue subject
-      subject `setValue` (f a)
+      subject `setValue` f a
 
 -- | Add an observer which doesn't care about the subject's value,
 -- only that it's changed.
