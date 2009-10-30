@@ -1,0 +1,25 @@
+observer
+========
+
+This is a Haskell implementation of the Observer design pattern [1,2],
+providing a typeclass and two example implementations (sycnrhonous and
+asynchronous), which are perfectly usable in their own right.
+
+This package is based on Observable.hs by Bastiaan Heeren [3],
+originally published as part of an exercise [4] for his students.  It
+has been modified, extended and packaged by Andy Gimblett [5,6].
+
+Changelog
+---------
+
+2009.10.30 v0.0.1 - first Cabalised version.
+
+--
+
+[1] Gamma et al: `Design Patterns: Elements of Reusable
+    Object-Oriented Software', Addison-Wesley, 1994.
+[2] http://en.wikipedia.org/wiki/Observer_pattern
+[3] http://people.cs.uu.nl/bastiaan/
+[4] http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell
+[5] http://www.cs.swan.ac.uk/~csandy/
+[6] email:haskell@gimbo.org.uk
