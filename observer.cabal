@@ -5,7 +5,10 @@ Synopsis:               The Observer pattern
 Description:
     This library contains a Haskell implementation of the Observer
     pattern, specified as a typeclass with two example instances
-    (demonstrating synchronous and asynchronous notifications)..
+    (demonstrating synchronous and asynchronous notifications).
+
+    It is based on Observable.hs by Bastiaan Heeren, originally from
+    <http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell>
 Category:               Control
 License:                BSD3
 License-file:           LICENSE
