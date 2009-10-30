@@ -28,20 +28,20 @@ import Control.Observer
 
 -- A Sub contains:
 --   1) a pointer to the current value;
---   2) a pointer to a list of "notify" functions (of the observers).
+--   2) a pointer to a list of "notify" functions (the observers).
 data Sub a = SubC {
-    subject   :: IORef a,
+    value     :: IORef a,
     observers :: IORef [a -> IO ()]
    }
 
 instance Subject (Sub a) a where 
-    getValue = readIORef . subject
-    setValue'= writeIORef . subject
+    getValue = readIORef . value
+    setValue'= writeIORef . value
     addObserver observable = modifyIORef (observers observable) . (:)
     getObservers = readIORef . observers
 
 -- | Smart constructor for Sub.
 createSub :: a -> IO (Sub a)
-createSub value = do subject'   <- newIORef value
-                     observers' <- newIORef []
-                     return $ SubC subject' observers'
+createSub val = do value'   <- newIORef val
+                   observers' <- newIORef []
+                   return $ SubC value' observers'
