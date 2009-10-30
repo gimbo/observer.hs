@@ -9,6 +9,7 @@ Description:
 Category:               Control
 License:                BSD3
 License-file:           LICENSE
+Homepage:               http://github.com/gimbo/observer.hs
 Copyright:              Andy Gimblett <haskell@gimbo.org.uk>
 Author:                 Andy Gimblett <haskell@gimbo.org.uk>
 Maintainer:             Andy Gimblett <haskell@gimbo.org.uk>
@@ -18,7 +19,7 @@ Extra-source-files:     README
 
 Source-Repository head
     Type:         git
-    Location:     http://code.haskell.org/observer
+    Location:     http://github.com/gimbo/observer.hs
 
 Library
   Build-Depends:   base >= 4 && < 5
