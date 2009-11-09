@@ -2,8 +2,8 @@ observer
 ========
 
 This is a Haskell implementation of the Observer design pattern [1,2],
-providing a typeclass and two example implementations (sycnrhonous and
-asynchronous), which are perfectly usable in their own right.
+providing a typeclass and an example implementation (Synchronous)
+which is perfectly usable in its own right.
 
 This package is based on Observable.hs by Bastiaan Heeren [3],
 originally published as part of an exercise [4] for his students.  It
