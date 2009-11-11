@@ -13,7 +13,7 @@ clean:
 			  find . -name '*~' -exec rm -vf {} ';' && \
 			  find . -name '*.hi' -exec rm -vf {} ';' && \
 			  find . -name '*.o' -exec rm -vf {} ';' && \
-			  rm -vf graphmod*
+			  rm -rvf graphmod* SourceGraph*
 
 ## For some reason I have trained myself to type "make nuke".
 nuke:			clean
@@ -58,5 +58,8 @@ graphmod:
 			@graphmod -q --no-cluster $(SOURCES) > graphmod.dot && \
 			  dot -T pdf -o graphmod.pdf graphmod.dot && \
 			  open graphmod.pdf
+
+sourcegraph:
+			@SourceGraph $(PACKAGE).cabal
 
 .PHONY: all clean nuke configure build haddock view sdist lint graphmod
