@@ -9,10 +9,16 @@ This package is based on Observable.hs by Bastiaan Heeren [3],
 originally published as part of an exercise [4] for his students.  It
 has been modified, extended and packaged by Andy Gimblett [5,6].
 
+TODO
+----
+
+* Implement a mechanism for removal of observers.  Consider Tom
+  Lokhorst's suggestion [7].
+
 Changelog
 ---------
 
-2009.10.30 v0.0.1 - first Cabalised version.
+2009.10.30 v0.0.0 - first Cabalised version, unreleased.
 
 --
 
@@ -23,3 +29,4 @@ Changelog
 [4] http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell
 [5] http://www.cs.swan.ac.uk/~csandy/
 [6] email:haskell@gimbo.org.uk
+[7] http://www.haskell.org/pipermail/haskell-cafe/2009-November/068915.html
