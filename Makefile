@@ -1,4 +1,4 @@
-PACKAGE		:=	observer
+PACKAGE		:=	simple-observer
 SRCDIR		:=	Control
 
 ## Everything from here on should be generic across projects.

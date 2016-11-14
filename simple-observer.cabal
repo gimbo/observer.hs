@@ -1,14 +1,14 @@
-Name:                   observer
-Version:                0.0.0
+Name:                   simple-observer
+Version:                0.0.1
 Stability:              Alpha
 Synopsis:               The Observer pattern
 Description:
-    This library contains a Haskell implementation of the Observer
-    pattern, specified as a typeclass with two example instances
-    (demonstrating synchronous and asynchronous notifications).
+    This is a simple Haskell implementation of the Observer pattern,
+    specified as a typeclass with one example instance (demonstrating
+    synchronous notifications).
 
     It is based on Observable.hs by Bastiaan Heeren, originally from
-    <http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell>
+    <http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell>.
 Category:               Control
 License:                BSD3
 License-file:           LICENSE

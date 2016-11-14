@@ -1,5 +1,5 @@
-observer
-========
+simple-observer
+===============
 
 This is a Haskell implementation of the Observer design pattern [1,2],
 providing a typeclass and an example implementation (Synchronous)
@@ -13,10 +13,14 @@ TODO
 ----
 
 * Implement a mechanism for removal of observers.  Consider Tom
-  Lokhorst's suggestion [7].
+  Lokhorst's suggestion on haskell-cafe [7].
 
 Changelog
 ---------
+
+2009.11.11 v0.0.1 - first release, renamed from observer to
+                    simple-observer in recognition that there are more
+                    sophisticated ways to skin this particular cat.
 
 2009.10.30 v0.0.0 - first Cabalised version, unreleased.
 
